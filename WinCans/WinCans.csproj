@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA7833DC-EED3-468C-8DDA-1EE7ECAC666F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinCans</RootNamespace>
+    <AssemblyName>WinCans</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <MonoGameContentBuilderExe>
+    </MonoGameContentBuilderExe>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Windows\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Windows\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Actions\ActionBase.cs" />
+    <Compile Include="Actions\ColorAction.cs" />
+    <Compile Include="Actions\DelayAction.cs" />
+    <Compile Include="Actions\MoveByAction.cs" />
+    <Compile Include="Actions\ParallelAction.cs" />
+    <Compile Include="Actions\RemoveActorAction.cs" />
+    <Compile Include="Actions\SequenceAction.cs" />
+    <Compile Include="Actions\TimedActionBase.cs" />
+    <Compile Include="Actors\Actor.cs" />
+    <Compile Include="Actors\Group.cs" />
+    <Compile Include="Animation.cs" />
+    <Compile Include="Assets.cs" />
+    <Compile Include="CanActor.cs" />
+    <Compile Include="CanData.cs" />
+    <Compile Include="Easing\BounceOut.cs" />
+    <Compile Include="Easing\Easing.cs" />
+    <Compile Include="MainGame.cs" />
+    <Compile Include="GameBoard.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\GameScreen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.5.1.1679, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.5.1.1679\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Cans.png" />
+    <Content Include="Content\Cans_Atlas.xml" />
+    <None Include="Content\Fonts\copyfont.txt" />
+    <Content Include="Content\GameOver.png" />
+    <Content Include="Content\Machine.png" />
+    <Content Include="Content\Pointer.png" />
+    <Content Include="Content\SFX\BlockSlide5.mp3" />
+    <Content Include="Content\SFX\FadingBlock1.mp3" />
+    <Content Include="Content\SFX\GameOver.mp3" />
+    <Content Include="Content\SFX\Select.mp3" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Content\Fonts\Open 24 Display St.ttf" />
+    <None Include="Content\HudFont.spritefont" />
+    <None Include="Content\HudFontSmall.spritefont" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
